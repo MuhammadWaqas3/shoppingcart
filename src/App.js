@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "./pages/home";
 import { CartPage } from "./pages/cart";
-import { ThankYouPage } from "./pages/thankyou";
+import { ThankYouPage } from "./pages/thankyou"; 
 import Navbar from "./pages/navbar";
 import "./index.css";
 
