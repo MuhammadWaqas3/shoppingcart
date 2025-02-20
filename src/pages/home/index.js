@@ -29,8 +29,12 @@ export default function MainPage({ cart, setCart }) {
             <img src={product.image} alt={product.name} className="product-image"/>
 <div className="text">
             <h3 className="product-name">{product.name}</h3>
-            <p className="product-price">${product.price}</p>
-            <button onClick={() => addToCart(product)} className="add-to-cart">Add To Cart</button> </div>
+            <p className="product-price">${product.price}</p> 
+            <div className="addToCart" >
+            <button onClick={() => addToCart(product)} className="add-to-cart">Add To Cart</button> 
+            <img src="/heart.png" alt="heart" className="  hearticon"/>
+            
+            </div></div>
           </div>
         ))}
       </div>
