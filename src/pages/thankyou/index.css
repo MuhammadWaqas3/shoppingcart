@@ -1,0 +1,22 @@
+.thankyou-container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .thankyou-message {
+    font-size: 28px;
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  .thankyou-subtext {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #555;
+  }
+  
