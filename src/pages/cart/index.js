@@ -16,7 +16,7 @@ export const CartPage = ({ cart, setCart }) => {
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
   const handleCheckout = () => {
-  
+    setCart([]); // Clear cart after checkout
     navigate("/thankyou"); 
   };
 
@@ -29,23 +29,33 @@ export const CartPage = ({ cart, setCart }) => {
         <div className="cart-items">
           {cart.map((item) => (
             <div key={item.id} className="cart-item">
-              <img src={item.image} alt={item.name} />
-              <h3>{item.name}</h3>
-              <p>${item.price}</p>
-              <button className="remove-btn" onClick={() => removeFromCart(item.id)}>
+              <img src={item.image} alt={item.name} className="cart-item-image" />
+              <div className="cart-item-details">
+                <h3 className="cart-item-name">{item.name}</h3>
+                <p className="cart-item-price">${item.price}</p>
+              </div>
+              <a 
+                href="/"
+                className="remove-link" 
+                onClick={(e) => {
+                  e.preventDefault(); // Prevent page reload
+                  removeFromCart(item.id);
+                }}
+              >
                 Remove
-              </button>
+              </a>
             </div>
           ))}
           <h2 className="cart-total">Total: ${totalPrice}</h2>
 
-          <button className="clear-cart-btn" onClick={clearCart}>
-            Clear Cart
-          </button>
-
-          <button className="checkout-btn" onClick={handleCheckout}>
-            Proceed to Checkout
-          </button>
+          <div className="cart-buttons">
+            <button className="clear-cart-btn" onClick={clearCart}>
+              Clear Cart
+            </button>
+            <button className="checkout-btn" onClick={handleCheckout}>
+              Proceed to Checkout
+            </button>
+          </div>
         </div>
       )}
     </div>
