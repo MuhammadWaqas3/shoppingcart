@@ -16,7 +16,6 @@ export const CartPage = ({ cart, setCart }) => {
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
   const handleCheckout = () => {
-    setCart([]); // Clear cart after checkout
     navigate("/thankyou"); 
   };
 
@@ -38,7 +37,7 @@ export const CartPage = ({ cart, setCart }) => {
                 href="/"
                 className="remove-link" 
                 onClick={(e) => {
-                  e.preventDefault(); // Prevent page reload
+                  e.preventDefault(); 
                   removeFromCart(item.id);
                 }}
               >
